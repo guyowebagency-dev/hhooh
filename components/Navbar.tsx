@@ -27,11 +27,12 @@ export default function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               <button onClick={() => scrollToSection('home')} className="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</button>
-              <button onClick={() => scrollToSection('inventory')} className="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Laptops</button>
-              <button onClick={() => scrollToSection('services')} className="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Repairs</button>
-              <button onClick={() => scrollToSection('contact')} className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/30">
-                Call 0799618902
-              </button>
+              <button onClick={() => scrollToSection('inventory')} className="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Inventory</button>
+              <button onClick={() => scrollToSection('services')} className="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Services</button>
+              <button onClick={() => scrollToSection('contact')} className="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact Us</button>
+              <a href="tel:0799618902" className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/30">
+                Call Now
+              </a>
             </div>
           </div>
 
@@ -66,8 +67,9 @@ export default function Navbar() {
         <div className="md:hidden glass-panel border-t border-slate-700">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <button onClick={() => scrollToSection('home')} className="text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left">Home</button>
-            <button onClick={() => scrollToSection('inventory')} className="text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left">Laptops</button>
-            <button onClick={() => scrollToSection('services')} className="text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left">Repairs</button>
+            <button onClick={() => scrollToSection('inventory')} className="text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left">Inventory</button>
+            <button onClick={() => scrollToSection('services')} className="text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left">Services</button>
+            <button onClick={() => scrollToSection('contact')} className="text-slate-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left">Contact Us</button>
             <div className="pt-4 pb-2">
                 <a href="tel:0799618902" className="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-3 rounded-lg text-base font-bold transition-colors">
                     Call 0799618902

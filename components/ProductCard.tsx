@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Laptop } from '../types';
 
 interface ProductCardProps {
@@ -7,6 +7,11 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, onClick }: ProductCardProps) {
+  const [imageError, setImageError] = useState(false);
+
+  // Fallback image in case the main one fails
+  const fallbackImage = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800";
+
   return (
     <div 
       className="group relative bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 cursor-pointer"
@@ -15,8 +20,9 @@ export default function ProductCard({ product, onClick }: ProductCardProps) {
       <div className="relative h-48 overflow-hidden">
         <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors z-10" />
         <img 
-          src={product.image} 
+          src={imageError ? fallbackImage : product.image} 
           alt={product.name} 
+          onError={() => setImageError(true)}
           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900 to-transparent p-4 translate-y-2 group-hover:translate-y-0 transition-transform">

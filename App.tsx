@@ -44,6 +44,11 @@ function App() {
     setSelectedProduct(null);
   };
 
+  // Helper to handle image errors in modal
+  const handleModalImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    e.currentTarget.src = "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800";
+  };
+
   return (
     <div className="min-h-screen relative overflow-hidden bg-slate-900 selection:bg-indigo-500 selection:text-white">
       {/* Background Decor */}
@@ -75,7 +80,7 @@ function App() {
           
           <div className="animate-slide-up-delay-2 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a href="#inventory" className="inline-flex justify-center items-center px-8 py-4 border border-transparent text-lg font-bold rounded-xl text-white bg-indigo-600 hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-500/40 hover:scale-105">
-              Browse Inventory
+              View Inventory
             </a>
             <a href="tel:0799618902" className="inline-flex justify-center items-center px-8 py-4 border border-slate-700 text-lg font-bold rounded-xl text-slate-200 bg-slate-800/50 hover:bg-slate-800 hover:text-white transition-all backdrop-blur-md hover:scale-105">
               Call 0799618902
@@ -86,7 +91,7 @@ function App() {
         {/* Inventory Section */}
         <section id="inventory" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Latest Arrivals</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Inventory</h2>
             <div className="h-1 w-24 bg-gradient-to-r from-indigo-500 to-cyan-500 mx-auto rounded-full"></div>
             <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
               High-performance machines for work, gaming, and creativity. Click on any laptop for details.
@@ -106,7 +111,7 @@ function App() {
         <section id="services" className="py-24 bg-slate-800/30 border-y border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Professional Repairs</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Our Services</h2>
               <div className="h-1 w-24 bg-gradient-to-r from-indigo-500 to-cyan-500 mx-auto rounded-full"></div>
               <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
                 Trusted by thousands in Nairobi. We bring your dead devices back to life.
@@ -172,6 +177,7 @@ function App() {
                <img 
                  src={selectedProduct.image} 
                  alt={selectedProduct.name} 
+                 onError={handleModalImageError}
                  className="w-full h-full object-cover"
                />
                <div className="absolute inset-0 bg-gradient-to-t from-slate-800 to-transparent opacity-60"></div>
